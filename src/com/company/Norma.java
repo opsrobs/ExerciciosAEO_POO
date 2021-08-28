@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Norma {
+    private String titulo;
     private String orgaoNormativo;
+    private Date dataCriacao;
     private float versao;
-    private ArrayList<AnexoTecnico> lista = new ArrayList<AnexoTecnico>();
+    private ArrayList<AnexoTecnico> lista = new ArrayList<>();
 
-    public Norma(String orgaoNormativo, float versao) {
+    public Norma( String titulo,String orgaoNormativo,Date dataCriacao,  float versao) {
+        this.titulo = titulo;
         this.orgaoNormativo = orgaoNormativo;
+        this.dataCriacao=dataCriacao;
         this.versao = versao;
     }
 
@@ -21,9 +25,24 @@ public class Norma {
         return lista;
     }
 
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
 
     public String getOrgaoNormativo() {
         return orgaoNormativo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public void setOrgaoNormativo(String orgaoNormativo) {
