@@ -4,30 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
+    <list default="true" id="12758747-4c59-47ee-8117-808a16fff1fe" name="Changes" comment="Arquivos aleatórios...">
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/AnexoTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AnexoTecnico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Norma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Norma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Dev" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Dev" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -37,27 +72,77 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProjectId" id="1xKPl2wSWj1FnNcKc540nSIVorW" />
+  <component name="ProjectId" id="1xK72f4Y3uxZr3jwdVKGVD6Ub3d" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExerciciosClasse" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExercicioVeiculos" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="ExerciciosAEO_POO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -65,47 +150,28 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="" />
-      <created>1630100953627</created>
+      <changelist id="12758747-4c59-47ee-8117-808a16fff1fe" name="Changes" comment="" />
+      <created>1630091728033</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1630100953627</updated>
+      <updated>1630091728033</updated>
     </task>
-    <task id="LOCAL-00001" summary="implementação das classes faltantes. Arraylists criados e agregações concluidas.">
-      <created>1630110843381</created>
+    <task id="LOCAL-00001" summary="Arquivos aleatórios...">
+      <created>1630350505039</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1630110843381</updated>
+      <updated>1630350505039</updated>
     </task>
-    <task id="LOCAL-00002" summary="implementação das classes faltantes. Arraylists criados e agregações concluidas.">
-      <created>1630110871768</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1630110871768</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
-      <created>1630272985410</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1630272985410</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
-      <created>1630273215921</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1630273215921</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,19 +187,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implementação das classes faltantes. Arraylists criados e agregações concluidas." />
-    <MESSAGE value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Arquivos aleatórios..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Arquivos aleatórios..." />
   </component>
 </project>
