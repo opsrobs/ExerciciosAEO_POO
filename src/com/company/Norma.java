@@ -1,5 +1,6 @@
 package com.company;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,9 +17,26 @@ public class Norma {
         this.dataCriacao=dataCriacao;
         this.versao = versao;
     }
+    public Norma(){
+        this.titulo = titulo;
+        this.orgaoNormativo = orgaoNormativo;
+        this.dataCriacao=dataCriacao;
+        this.versao = versao;
+    }
 
     public void addAnexoTecnico(String titulo, Date data, String tema){
         lista.add(new AnexoTecnico(titulo,data,tema));
+//        lista.add(new AnexoTecnico());
+    }
+    public void getAnexoTecnico(){
+    }
+
+    public ArrayList<AnexoTecnico> getLista() {
+        return lista;
+    }
+
+    public void setLista(ArrayList<AnexoTecnico> lista) {
+        this.lista = lista;
     }
 
     public ArrayList<AnexoTecnico> getAnexosTecnicos(){
@@ -58,7 +76,19 @@ public class Norma {
     }
     @Override
     public String toString(){
-        return  "\n Orgão Normativo: "+ this.getOrgaoNormativo()+
+        SimpleDateFormat dT = new SimpleDateFormat("dd/MM/yyyy");
+        return  "\n O titulo da norma é" + this.getTitulo()+
+                "\n Orgão Normativo: "+ this.getOrgaoNormativo()+
+                "\n A data é: "+ dT.format(this.getDataCriacao())+
                 "\n Versão do software: " + this.getVersao();
+    }
+
+    public int retornaAnexo(){
+        int maior=0;
+        for (int i = 0; i < this.lista.size(); i++) {
+
+
+        }
+        return maior;
     }
 }

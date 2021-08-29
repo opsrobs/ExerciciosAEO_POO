@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/AnexoTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AnexoTecnico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Norma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Norma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SevicoObras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +21,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -36,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExercicioVeiculos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExerciciosClasse" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -67,6 +77,35 @@
       <option name="presentableId" value="Default" />
       <updated>1630100953627</updated>
     </task>
+    <task id="LOCAL-00001" summary="implementação das classes faltantes. Arraylists criados e agregações concluidas.">
+      <created>1630110843381</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630110843381</updated>
+    </task>
+    <task id="LOCAL-00002" summary="implementação das classes faltantes. Arraylists criados e agregações concluidas.">
+      <created>1630110871768</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630110871768</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
+      <created>1630272985410</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1630272985410</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
+      <created>1630273215921</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630273215921</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,14 +118,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implementação das classes faltantes. Arraylists criados e agregações concluidas." />
+    <MESSAGE value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
