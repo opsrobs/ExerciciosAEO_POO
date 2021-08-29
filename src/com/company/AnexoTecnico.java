@@ -22,9 +22,10 @@ public class AnexoTecnico {
     @Override
     public String toString() {
         SimpleDateFormat dT = new SimpleDateFormat("dd/MM/yyyy");
-        return  " Titulo: "+ this.getTitulo()+
-                "\n Data de criação: "+ dT.format(this.getDataCriacao())+
-                "\n Tema: "+ this.getTema();
+        return  "Os anexos técnicos são:\n " +
+                "\t\n Titulo: "+ this.getTitulo()+
+                "\t\n Data de criação: "+ dT.format(this.getDataCriacao())+
+                "\t\n Tema: "+ this.getTema();
     }
 
     public String getTitulo() {

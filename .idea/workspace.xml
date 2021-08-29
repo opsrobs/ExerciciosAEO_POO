@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
+    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
+      <changelist_data name="robson" email="robson.flavio20@outlook.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" afterDir="false" />
@@ -21,11 +22,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="robson &lt;robson.flavio20@outlook.com&gt;" />
+      </list>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--tags" />
         <option name="title" value="All" />
       </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="devmaster" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -38,6 +49,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1xKPl2wSWj1FnNcKc540nSIVorW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,21 +61,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExerciciosClasse" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="ExerciciosAEO_POO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -123,15 +133,28 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="implementação das classes faltantes. Arraylists criados e agregações concluidas." />
     <MESSAGE value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
+    <MESSAGE value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.&#10;Neste momento, todos os filtros estão funcionando. Por hora estamos trabalhando com a validação de data." />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="4" />
+          <line>37</line>
+          <properties class="com.company.SevicoNormas" method="converterData">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
+          <line>24</line>
+          <properties class="com.company.SevicoNormas" method="buscaData">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
