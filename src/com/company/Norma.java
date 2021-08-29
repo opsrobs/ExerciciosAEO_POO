@@ -77,18 +77,10 @@ public class Norma {
     @Override
     public String toString(){
         SimpleDateFormat dT = new SimpleDateFormat("dd/MM/yyyy");
-        return  "\n O titulo da norma é" + this.getTitulo()+
-                "\n Orgão Normativo: "+ this.getOrgaoNormativo()+
-                "\n A data é: "+ dT.format(this.getDataCriacao())+
-                "\n Versão do software: " + this.getVersao();
+        return  "\n O titulo da norma é " + this.getTitulo()+
+                "\t\n Orgão Normativo da norma " +this.getTitulo()+ " é: "+ this.getOrgaoNormativo()+
+                "\t\n A data  da norma " +this.getTitulo()+ "é: "+ dT.format(this.getDataCriacao())+
+                "\t\n Versão do software desta norma: " + this.getVersao();
     }
 
-    public int retornaAnexo(){
-        int maior=0;
-        for (int i = 0; i < this.lista.size(); i++) {
-
-
-        }
-        return maior;
-    }
 }

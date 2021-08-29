@@ -1,0 +1,659 @@
+Index: src/com/company/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company;\r\n\r\nimport javax.swing.*;\r\nimport java.text.ParseException;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Date;\r\n\r\npublic class Main {\r\n\r\n    public static void main(String[] args) {\r\n        SevicoNormas sevicoNormas = new SevicoNormas();\r\n        AnexoTecnico anexoTecnico = new AnexoTecnico();\r\n        Norma norma = new Norma();\r\n        SimpleDateFormat dataFormatada = new SimpleDateFormat(\"dd/MM/yyyy\");\r\n            Date data = new Date();\r\n\r\n        String titulo;\r\n        String tituloAnexo;\r\n        String d;\r\n        String  normativo;\r\n        String tema;\r\n        float versao;\r\n\r\n        titulo = JOptionPane.showInputDialog(\"Informe o titulo: \");\r\n        boolean dataValida;\r\n        while ( titulo!= null) {\r\n            norma.setTitulo(titulo);\r\n            norma.setOrgaoNormativo(normativo = JOptionPane.showInputDialog(\"Informe o nome do Orgão normativo: \"));\r\n            norma.setVersao(versao = Float.parseFloat(JOptionPane.showInputDialog(\"Informe a versão do software: \")));\r\n            do{\r\n                d=JOptionPane.showInputDialog(\"Informe a data [DD/MM/AAAA]: \");\r\n                try {\r\n                    data= dataFormatada.parse(d);\r\n                    dataValida=true;\r\n                }\r\n                catch (Exception e)\r\n                {\r\n                    dataValida=false;\r\n                }\r\n                norma.setDataCriacao(data);\r\n            }\r\n            while (!dataValida);\r\n\r\n            Norma normas = new Norma(titulo,normativo,data,versao);\r\n            sevicoNormas.retornarNormas(normas);\r\n            tituloAnexo=  JOptionPane.showInputDialog(\"Informe o titulo do anexo: \");\r\n            while (tituloAnexo!= null){\r\n\r\n                do{\r\n                    d=JOptionPane.showInputDialog(\"Informe a data [DD/MM/AAAA]: \");\r\n                    try {\r\n                        data= dataFormatada.parse(d);\r\n                        dataValida=true;\r\n                    } catch (ParseException e) {\r\n                        dataValida=false;\r\n                    }\r\n                    anexoTecnico.setDataCriacao(data);\r\n                }while (!dataValida);\r\n                tema=JOptionPane.showInputDialog(\"Informe o Tema: \");\r\n                anexoTecnico.setTitulo(tituloAnexo);\r\n                anexoTecnico.setTema(tema);\r\n                normas.addAnexoTecnico(tituloAnexo,data,tema);\r\n                tituloAnexo=  JOptionPane.showInputDialog(\"Informe o titulo do anexo: \");\r\n\r\n            }\r\n            titulo = JOptionPane.showInputDialog(\"Informe o titulo: \");\r\n        }\r\n        System.out.println(\"--------\\n\"+sevicoNormas.normaMaiorQtdAnexo());\r\n        System.out.println(\"--------\\n\"+sevicoNormas.normaMaisAntiga());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/Main.java b/src/com/company/Main.java
+--- a/src/com/company/Main.java	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
++++ b/src/com/company/Main.java	(date 1630096499491)
+@@ -1,71 +1,28 @@
+ package com.company;
+ 
+ import javax.swing.*;
+-import java.text.ParseException;
+ import java.text.SimpleDateFormat;
+ import java.util.Date;
+ 
+ public class Main {
+ 
+     public static void main(String[] args) {
+-        SevicoNormas sevicoNormas = new SevicoNormas();
+-        AnexoTecnico anexoTecnico = new AnexoTecnico();
+-        Norma norma = new Norma();
++	Norma norma;
++
+         SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+-            Date data = new Date();
++            Date data= new Date();
+ 
+-        String titulo;
+-        String tituloAnexo;
+-        String d;
+-        String  normativo;
++
++        String orgaoNormativo;
++        int versao;
+         String tema;
+-        float versao;
+-
+-        titulo = JOptionPane.showInputDialog("Informe o titulo: ");
+-        boolean dataValida;
+-        while ( titulo!= null) {
+-            norma.setTitulo(titulo);
+-            norma.setOrgaoNormativo(normativo = JOptionPane.showInputDialog("Informe o nome do Orgão normativo: "));
+-            norma.setVersao(versao = Float.parseFloat(JOptionPane.showInputDialog("Informe a versão do software: ")));
+-            do{
+-                d=JOptionPane.showInputDialog("Informe a data [DD/MM/AAAA]: ");
+-                try {
+-                    data= dataFormatada.parse(d);
+-                    dataValida=true;
+-                }
+-                catch (Exception e)
+-                {
+-                    dataValida=false;
+-                }
+-                norma.setDataCriacao(data);
+-            }
+-            while (!dataValida);
++        String titulo = JOptionPane.showInputDialog("Informe o titulo da norma: ");
+ 
+-            Norma normas = new Norma(titulo,normativo,data,versao);
+-            sevicoNormas.retornarNormas(normas);
+-            tituloAnexo=  JOptionPane.showInputDialog("Informe o titulo do anexo: ");
+-            while (tituloAnexo!= null){
++        while (titulo != "fim"){
++            orgaoNormativo=JOptionPane.showInputDialog("Informe o nome do Orgão Normativo: ");
++            versao = Integer.parseInt(JOptionPane.showInputDialog("Informe a versão do software: "));
+ 
+-                do{
+-                    d=JOptionPane.showInputDialog("Informe a data [DD/MM/AAAA]: ");
+-                    try {
+-                        data= dataFormatada.parse(d);
+-                        dataValida=true;
+-                    } catch (ParseException e) {
+-                        dataValida=false;
+-                    }
+-                    anexoTecnico.setDataCriacao(data);
+-                }while (!dataValida);
+-                tema=JOptionPane.showInputDialog("Informe o Tema: ");
+-                anexoTecnico.setTitulo(tituloAnexo);
+-                anexoTecnico.setTema(tema);
+-                normas.addAnexoTecnico(tituloAnexo,data,tema);
+-                tituloAnexo=  JOptionPane.showInputDialog("Informe o titulo do anexo: ");
+ 
+-            }
+-            titulo = JOptionPane.showInputDialog("Informe o titulo: ");
+         }
+-        System.out.println("--------\n"+sevicoNormas.normaMaiorQtdAnexo());
+-        System.out.println("--------\n"+sevicoNormas.normaMaisAntiga());
+     }
+ }
+Index: src/com/company/AnexoTecnico.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company;\r\n\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Date;\r\n\r\npublic class AnexoTecnico {\r\n    private String titulo;\r\n    private Date DataCriacao;\r\n    private String tema;\r\n\r\n    public AnexoTecnico(){\r\n        this.titulo = titulo;\r\n        DataCriacao = DataCriacao;\r\n        this.tema = tema;\r\n    }\r\n\r\n    public AnexoTecnico(String titulo, Date dataCriacao, String tema) {\r\n        this.titulo = titulo;\r\n        DataCriacao = dataCriacao;\r\n        this.tema = tema;\r\n    }\r\n    @Override\r\n    public String toString() {\r\n        SimpleDateFormat dT = new SimpleDateFormat(\"dd/MM/yyyy\");\r\n        return  \" Titulo: \"+ this.getTitulo()+\r\n                \"\\n Data de criação: \"+ dT.format(this.getDataCriacao())+\r\n                \"\\n Tema: \"+ this.getTema();\r\n    }\r\n\r\n    public String getTitulo() {\r\n        return titulo;\r\n    }\r\n\r\n    public void setTitulo(String titulo) {\r\n        this.titulo = titulo;\r\n    }\r\n\r\n    public Date getDataCriacao() {\r\n        return DataCriacao;\r\n    }\r\n\r\n    public void setDataCriacao(Date dataCriacao) {\r\n        DataCriacao = dataCriacao;\r\n    }\r\n\r\n    public String getTema() {\r\n        return tema;\r\n    }\r\n\r\n    public void setTema(String tema) {\r\n        this.tema = tema;\r\n    }\r\n\r\n//    public String dadosAnexo(){\r\n//        String dados = sevicoNormas.normaMaiorQtdAnexo(this.getTitulo(),this.DataCriacao,this.getTema());\r\n//\r\n//        return dados;\r\n//    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/AnexoTecnico.java b/src/com/company/AnexoTecnico.java
+--- a/src/com/company/AnexoTecnico.java	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
++++ b/src/com/company/AnexoTecnico.java	(date 1630094282674)
+@@ -8,12 +8,6 @@
+     private Date DataCriacao;
+     private String tema;
+ 
+-    public AnexoTecnico(){
+-        this.titulo = titulo;
+-        DataCriacao = DataCriacao;
+-        this.tema = tema;
+-    }
+-
+     public AnexoTecnico(String titulo, Date dataCriacao, String tema) {
+         this.titulo = titulo;
+         DataCriacao = dataCriacao;
+@@ -22,9 +16,9 @@
+     @Override
+     public String toString() {
+         SimpleDateFormat dT = new SimpleDateFormat("dd/MM/yyyy");
+-        return  " Titulo: "+ this.getTitulo()+
++        return  "\n Titulo: "+ this.getTitulo()+
+                 "\n Data de criação: "+ dT.format(this.getDataCriacao())+
+-                "\n Tema: "+ this.getTema();
++                "Tema: "+ this.getTema();
+     }
+ 
+     public String getTitulo() {
+@@ -50,10 +44,4 @@
+     public void setTema(String tema) {
+         this.tema = tema;
+     }
+-
+-//    public String dadosAnexo(){
+-//        String dados = sevicoNormas.normaMaiorQtdAnexo(this.getTitulo(),this.DataCriacao,this.getTema());
+-//
+-//        return dados;
+-//    }
+ }
+Index: src/com/company/Norma.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company;\r\n\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.ArrayList;\r\nimport java.util.Date;\r\n\r\npublic class Norma {\r\n    private String titulo;\r\n    private String orgaoNormativo;\r\n    private Date dataCriacao;\r\n    private float versao;\r\n    private ArrayList<AnexoTecnico> lista = new ArrayList<>();\r\n\r\n    public Norma( String titulo,String orgaoNormativo,Date dataCriacao,  float versao) {\r\n        this.titulo = titulo;\r\n        this.orgaoNormativo = orgaoNormativo;\r\n        this.dataCriacao=dataCriacao;\r\n        this.versao = versao;\r\n    }\r\n    public Norma(){\r\n        this.titulo = titulo;\r\n        this.orgaoNormativo = orgaoNormativo;\r\n        this.dataCriacao=dataCriacao;\r\n        this.versao = versao;\r\n    }\r\n\r\n    public void addAnexoTecnico(String titulo, Date data, String tema){\r\n        lista.add(new AnexoTecnico(titulo,data,tema));\r\n//        lista.add(new AnexoTecnico());\r\n    }\r\n    public void getAnexoTecnico(){\r\n    }\r\n\r\n    public ArrayList<AnexoTecnico> getLista() {\r\n        return lista;\r\n    }\r\n\r\n    public void setLista(ArrayList<AnexoTecnico> lista) {\r\n        this.lista = lista;\r\n    }\r\n\r\n    public ArrayList<AnexoTecnico> getAnexosTecnicos(){\r\n        return lista;\r\n    }\r\n\r\n    public Date getDataCriacao() {\r\n        return dataCriacao;\r\n    }\r\n\r\n    public void setDataCriacao(Date dataCriacao) {\r\n        this.dataCriacao = dataCriacao;\r\n    }\r\n\r\n    public String getOrgaoNormativo() {\r\n        return orgaoNormativo;\r\n    }\r\n\r\n    public String getTitulo() {\r\n        return titulo;\r\n    }\r\n\r\n    public void setTitulo(String titulo) {\r\n        this.titulo = titulo;\r\n    }\r\n\r\n    public void setOrgaoNormativo(String orgaoNormativo) {\r\n        this.orgaoNormativo = orgaoNormativo;\r\n    }\r\n\r\n    public float getVersao() {\r\n        return versao;\r\n    }\r\n\r\n    public void setVersao(float versao) {\r\n        this.versao = versao;\r\n    }\r\n    @Override\r\n    public String toString(){\r\n        SimpleDateFormat dT = new SimpleDateFormat(\"dd/MM/yyyy\");\r\n        return  \"\\n O titulo da norma é\" + this.getTitulo()+\r\n                \"\\n Orgão Normativo: \"+ this.getOrgaoNormativo()+\r\n                \"\\n A data é: \"+ dT.format(this.getDataCriacao())+\r\n                \"\\n Versão do software: \" + this.getVersao();\r\n    }\r\n\r\n    public int retornaAnexo(){\r\n        int maior=0;\r\n        for (int i = 0; i < this.lista.size(); i++) {\r\n\r\n\r\n        }\r\n        return maior;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/Norma.java b/src/com/company/Norma.java
+--- a/src/com/company/Norma.java	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
++++ b/src/com/company/Norma.java	(date 1630095034746)
+@@ -1,68 +1,31 @@
+ package com.company;
+ 
+-import java.text.SimpleDateFormat;
+ import java.util.ArrayList;
+ import java.util.Date;
+ 
+ public class Norma {
+-    private String titulo;
+     private String orgaoNormativo;
+-    private Date dataCriacao;
+     private float versao;
+-    private ArrayList<AnexoTecnico> lista = new ArrayList<>();
++    private ArrayList<AnexoTecnico> lista = new ArrayList<AnexoTecnico>();
+ 
+-    public Norma( String titulo,String orgaoNormativo,Date dataCriacao,  float versao) {
+-        this.titulo = titulo;
+-        this.orgaoNormativo = orgaoNormativo;
+-        this.dataCriacao=dataCriacao;
+-        this.versao = versao;
+-    }
+-    public Norma(){
+-        this.titulo = titulo;
++    public Norma(String orgaoNormativo, float versao) {
+         this.orgaoNormativo = orgaoNormativo;
+-        this.dataCriacao=dataCriacao;
+         this.versao = versao;
+     }
+ 
+     public void addAnexoTecnico(String titulo, Date data, String tema){
+         lista.add(new AnexoTecnico(titulo,data,tema));
+-//        lista.add(new AnexoTecnico());
+-    }
+-    public void getAnexoTecnico(){
+-    }
+-
+-    public ArrayList<AnexoTecnico> getLista() {
+-        return lista;
+-    }
+-
+-    public void setLista(ArrayList<AnexoTecnico> lista) {
+-        this.lista = lista;
+     }
+ 
+     public ArrayList<AnexoTecnico> getAnexosTecnicos(){
+         return lista;
+     }
+ 
+-    public Date getDataCriacao() {
+-        return dataCriacao;
+-    }
+-
+-    public void setDataCriacao(Date dataCriacao) {
+-        this.dataCriacao = dataCriacao;
+-    }
+ 
+     public String getOrgaoNormativo() {
+         return orgaoNormativo;
+     }
+ 
+-    public String getTitulo() {
+-        return titulo;
+-    }
+-
+-    public void setTitulo(String titulo) {
+-        this.titulo = titulo;
+-    }
+-
+     public void setOrgaoNormativo(String orgaoNormativo) {
+         this.orgaoNormativo = orgaoNormativo;
+     }
+@@ -76,19 +39,7 @@
+     }
+     @Override
+     public String toString(){
+-        SimpleDateFormat dT = new SimpleDateFormat("dd/MM/yyyy");
+-        return  "\n O titulo da norma é" + this.getTitulo()+
+-                "\n Orgão Normativo: "+ this.getOrgaoNormativo()+
+-                "\n A data é: "+ dT.format(this.getDataCriacao())+
++        return  "\n Orgão Normativo: "+ this.getOrgaoNormativo()+
+                 "\n Versão do software: " + this.getVersao();
+     }
+-
+-    public int retornaAnexo(){
+-        int maior=0;
+-        for (int i = 0; i < this.lista.size(); i++) {
+-
+-
+-        }
+-        return maior;
+-    }
+ }
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
++++ /dev/null	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/com/company/SevicoNormas.java
+===================================================================
+diff --git a/src/com/company/SevicoNormas.java b/src/com/company/SevicoNormas.java
+deleted file mode 100644
+--- a/src/com/company/SevicoNormas.java	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
++++ /dev/null	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
+@@ -1,48 +0,0 @@
+-package com.company;
+-
+-import java.util.ArrayList;
+-import java.util.Date;
+-
+-import static com.company.Norma.*;
+-public class SevicoNormas {
+-    ArrayList<Norma> normas= new ArrayList<>();
+-
+-    public void retornarNormas(Norma norma){
+-        this.normas.add(norma);
+-    }
+-
+-    public String normaMaiorQtdAnexo(){
+-        int maior=0;
+-        int posicao=0;
+-        int j;
+-        String dadosAnexo="";
+-        for (int i = 0,cont=0; i < this.normas.size(); i++, cont++) {
+-            if (normas.get(i).getAnexosTecnicos().size() > maior) {
+-                maior = normas.get(i).getAnexosTecnicos().size();
+-                posicao = cont;
+-            }
+-        }
+-        dadosAnexo= normas.get(posicao).toString()+ "\n"+normas.get(posicao).getLista().toString();
+-        return dadosAnexo;
+-    }
+-
+-    public String normaMaisAntiga(){
+-        int posicao=0;
+-        Date dataAntiga = new Date();
+-        String dadosAnexo="";
+-        for (int i = 0,cont=0; i < this.normas.size(); i++, cont++) {
+-            if (dataAntiga.before(normas.get(i).getDataCriacao())) {
+-                dataAntiga= normas.get(i).getDataCriacao();
+-                posicao=cont;
+-            }
+-        }
+-        dadosAnexo= normas.get(posicao).getLista().toString();
+-        return dadosAnexo;
+-    }
+-
+-
+-}
+-
+-
+-
+-
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"bc546ad9-6044-4fc7-9af2-853648249baf\" name=\"Changes\" comment=\"Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/com/company/AnexoTecnico.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/com/company/AnexoTecnico.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/com/company/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/com/company/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/com/company/Norma.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/com/company/Norma.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/com/company/SevicoNormas.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/com/company/SevicoNormas.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--tags\" />\r\n        <option name=\"title\" value=\"All\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1xKPl2wSWj1FnNcKc540nSIVorW\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../ExerciciosClasse\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.company.Main\" />\r\n      <module name=\"ExerciciosAEO_POO\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.company.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"bc546ad9-6044-4fc7-9af2-853648249baf\" name=\"Changes\" comment=\"\" />\r\n      <created>1630100953627</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1630100953627</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"implementação das classes faltantes. Arraylists criados e agregações concluidas.\">\r\n      <created>1630110843381</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1630110843381</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"implementação das classes faltantes. Arraylists criados e agregações concluidas.\">\r\n      <created>1630110871768</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1630110871768</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.\">\r\n      <created>1630272985410</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1630272985410</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.\">\r\n      <created>1630273215921</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1630273215921</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"implementação das classes faltantes. Arraylists criados e agregações concluidas.\" />\r\n    <MESSAGE value=\"Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>\r\n          <line>33</line>\r\n          <option name=\"timeStamp\" value=\"4\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
++++ b/.idea/workspace.xml	(date 1630350315584)
+@@ -4,29 +4,20 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/AnexoTecnico.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Norma.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/com/company/AnexoTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AnexoTecnico.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/com/company/Norma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Norma.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" afterDir="false" />
+-    </list>
++    <list default="true" id="12758747-4c59-47ee-8117-808a16fff1fe" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="Git.Settings">
+-    <option name="PUSH_TAGS">
+-      <GitPushTagMode>
+-        <option name="argument" value="--tags" />
+-        <option name="title" value="All" />
+-      </GitPushTagMode>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Class" />
++      </list>
+     </option>
++  </component>
++  <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitSEFilterConfiguration">
+@@ -37,75 +28,91 @@
+       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+     </file-type-list>
+   </component>
+-  <component name="ProjectId" id="1xKPl2wSWj1FnNcKc540nSIVorW" />
++  <component name="ProjectId" id="1xK72f4Y3uxZr3jwdVKGVD6Ub3d" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectView">
++    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
++      <flattenPackages />
++      <showMembers />
++      <showModules />
++      <showLibraryContents />
++      <hideEmptyPackages />
++      <abbreviatePackageNames />
++      <autoscrollToSource />
++      <autoscrollFromSource />
++      <sortByType />
++    </navigator>
++    <panes>
++      <pane id="Scope" />
++      <pane id="PackagesPane" />
++      <pane id="ProjectPane">
++        <subPane>
++          <PATH>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="untitled104" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
++            </PATH_ELEMENT>
++          </PATH>
++          <PATH>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="untitled104" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="untitled104" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++          </PATH>
++          <PATH>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="untitled104" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="untitled104" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="src" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="company" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++          </PATH>
++        </subPane>
++      </pane>
++    </panes>
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
+-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExerciciosClasse" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExercicioVeiculos" />
+   </component>
+   <component name="RunManager">
+-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+       <module name="ExerciciosAEO_POO" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.company.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
++      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
++      <RunnerSettings RunnerId="Run" />
++      <ConfigurationWrapper RunnerId="Run" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.Main" />
+-      </list>
+-    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="" />
+-      <created>1630100953627</created>
++      <changelist id="12758747-4c59-47ee-8117-808a16fff1fe" name="Changes" comment="" />
++      <created>1630091728033</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1630100953627</updated>
+-    </task>
+-    <task id="LOCAL-00001" summary="implementação das classes faltantes. Arraylists criados e agregações concluidas.">
+-      <created>1630110843381</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1630110843381</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="implementação das classes faltantes. Arraylists criados e agregações concluidas.">
+-      <created>1630110871768</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1630110871768</updated>
++      <updated>1630091728033</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
+-      <created>1630272985410</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1630272985410</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
+-      <created>1630273215921</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1630273215921</updated>
+-    </task>
+-    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -118,22 +125,5 @@
+         </entry>
+       </map>
+     </option>
+-    <option name="oldMeFiltersMigrated" value="true" />
+-  </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="implementação das classes faltantes. Arraylists criados e agregações concluidas." />
+-    <MESSAGE value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
+-    <option name="LAST_COMMIT_MESSAGE" value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
+-          <line>33</line>
+-          <option name="timeStamp" value="4" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 1e34fab5d13c9fd43193507a4a0a083b6164480e)
++++ b/.idea/vcs.xml	(date 1630096665086)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
