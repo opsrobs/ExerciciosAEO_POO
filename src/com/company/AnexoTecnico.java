@@ -8,12 +8,6 @@ public class AnexoTecnico {
     private Date DataCriacao;
     private String tema;
 
-    public AnexoTecnico(){
-        this.titulo = titulo;
-        DataCriacao = DataCriacao;
-        this.tema = tema;
-    }
-
     public AnexoTecnico(String titulo, Date dataCriacao, String tema) {
         this.titulo = titulo;
         DataCriacao = dataCriacao;
@@ -22,9 +16,9 @@ public class AnexoTecnico {
     @Override
     public String toString() {
         SimpleDateFormat dT = new SimpleDateFormat("dd/MM/yyyy");
-        return  " Titulo: "+ this.getTitulo()+
+        return  "\n Titulo: "+ this.getTitulo()+
                 "\n Data de criação: "+ dT.format(this.getDataCriacao())+
-                "\n Tema: "+ this.getTema();
+                "Tema: "+ this.getTema();
     }
 
     public String getTitulo() {
@@ -50,10 +44,4 @@ public class AnexoTecnico {
     public void setTema(String tema) {
         this.tema = tema;
     }
-
-//    public String dadosAnexo(){
-//        String dados = sevicoNormas.normaMaiorQtdAnexo(this.getTitulo(),this.DataCriacao,this.getTema());
-//
-//        return dados;
-//    }
 }
