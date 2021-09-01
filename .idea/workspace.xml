@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="Correção dos filtros e inicio dos ajustes de métodos(Método main estava estruturado)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExerciciosAEO_POO/com/company/SevicoNormas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SevicoNormas.java" afterDir="false" />
-    </list>
+    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +24,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="devmaster" />
+        <entry key="$PROJECT_DIR$" value="Dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,7 +126,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -153,7 +174,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
           <line>37</line>
-          <properties class="com.company.SevicoNormas" method="converterData">
+          <properties class="com.company.SevicoNormas">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="8" />
@@ -161,7 +182,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
           <line>24</line>
-          <properties class="com.company.SevicoNormas" method="buscaData">
+          <properties class="com.company.SevicoNormas">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="9" />
