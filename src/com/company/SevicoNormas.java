@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static com.company.Norma.*;
-public class SevicoNormas {
+public class SevicoNormas extends AnexoTecnico {
     Norma norma = new Norma();
     ArrayList<Norma> normas= new ArrayList<>();
 
@@ -35,13 +35,12 @@ public class SevicoNormas {
         return JOptionPane.showInputDialog("Informe o nome do Orgão normativo: ");
     }
 
-    public Date converterData(){
-        String d = this.buscaData();
+    public Date converterData(String d){
         SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
         Date data = new Date();
         boolean dataValida;
         do{
-            this.buscaData();
+
             try {
                 data= dataFormatada.parse(d);
                 dataValida=true;
