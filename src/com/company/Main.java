@@ -15,7 +15,7 @@ public class Main {
         float versao;
 
         String titulo=sevicoNormas.buscaTitulo();
-        while (!Objects.equals(titulo, "sair")) {
+        while (!titulo.equalsIgnoreCase("sair")) {
             norma.setTitulo(titulo);
             String  normativo=sevicoNormas.buscaOrgaoNormativo();
             norma.setOrgaoNormativo(normativo);
@@ -24,16 +24,15 @@ public class Main {
             dt=sevicoNormas.converterData(sevicoNormas.buscaData());
 
             Norma normas = new Norma(titulo,normativo,dt,versao);
-//            sevicoNormas.retornarNormas(normas);
+            sevicoNormas.retornarNormas(normas);
             String tituloAnexo= sevicoNormas.buscaTituloAnexo();
-            while (!Objects.equals(tituloAnexo, "sair")){
+            while (!tituloAnexo.equalsIgnoreCase("sair")){
                 dt=sevicoNormas.converterData(sevicoNormas.buscaData());
                 String tema= sevicoNormas.buscaTema();
                 sevicoNormas.setTitulo(tituloAnexo);
-                sevicoNormas.setTema(sevicoNormas.buscaTema());
+                sevicoNormas.setTema(tema);
                 normas.addAnexoTecnico(tituloAnexo,dt,tema);
-                sevicoNormas.buscaTituloAnexo();
-
+                tituloAnexo= sevicoNormas.buscaTituloAnexo();
             }
             titulo =sevicoNormas.buscaTitulo();
         }
