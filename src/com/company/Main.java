@@ -24,7 +24,6 @@ public class Main {
             dt=sevicoNormas.converterData(sevicoNormas.buscaData());
 
             Norma normas = new Norma(titulo,normativo,dt,versao);
-//            sevicoNormas.retornarNormas(normas);
             String tituloAnexo= sevicoNormas.buscaTituloAnexo();
             while (!Objects.equals(tituloAnexo, "sair")){
                 dt=sevicoNormas.converterData(sevicoNormas.buscaData());

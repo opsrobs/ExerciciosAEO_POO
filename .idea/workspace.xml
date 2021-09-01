@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bc546ad9-6044-4fc7-9af2-853648249baf" name="Changes" comment="mds" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -140,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630358230255</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="mds">
+      <created>1630519519082</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1630519519082</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,14 +203,16 @@
     <MESSAGE value="Apresentado normas e anexos tecnicos baseados em filtros de mais anexos e pendentes os filtros de datas mais antigas.&#10;Neste momento, todos os filtros estão funcionando. Por hora estamos trabalhando com a validação de data." />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Correção dos filtros e inicio dos ajustes de métodos(Método main estava estruturado)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correção dos filtros e inicio dos ajustes de métodos(Método main estava estruturado)" />
+    <MESSAGE value="Bug de loop infinito nas datas corrigido. Todos os filtros estão ok." />
+    <MESSAGE value="mds" />
+    <option name="LAST_COMMIT_MESSAGE" value="mds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
-          <line>37</line>
+          <line>42</line>
           <properties class="com.company.SevicoNormas">
             <option name="EMULATED" value="true" />
           </properties>
@@ -203,7 +220,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/company/SevicoNormas.java</url>
-          <line>24</line>
+          <line>35</line>
           <properties class="com.company.SevicoNormas">
             <option name="EMULATED" value="true" />
           </properties>
